@@ -1,0 +1,30 @@
+/** STYLESHEET FOR INDEX.HTML - SHOPPING PAGE **/
+
+#wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+#shop {
+    width: 50%;
+    border: 1px solid red;
+    
+}
+
+#cart {
+    width: 50%;
+    border: 1px solid red;
+}
+
+#shop-items ul {
+    
+    
+}
+
+#shop-items li {
+   
+    
+   
+}
