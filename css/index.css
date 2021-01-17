@@ -18,13 +18,18 @@
     border: 1px solid red;
 }
 
-#shop-items ul {
-    
-    
+#shop-items img {
+    vertical-align: middle;
 }
 
 #shop-items li {
-   
-    
-   
+    font-size: 22px;
+    border-bottom: 1px solid black;
+    margin-bottom: 5px;
+    padding: 5px;
+
+}
+
+#shop-items button {
+    margin-left: 20px;
 }
