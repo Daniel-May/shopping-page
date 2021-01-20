@@ -10,7 +10,8 @@
 #shop {
     width: 50%;
     border: 1px solid red;
-    
+    overflow: auto;
+    max-height: 100vh;
 }
 
 #shop-items {
