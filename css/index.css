@@ -24,9 +24,14 @@
 
 .shop-item {
     width: 40%;
-    border: 1px solid red;
+    border: 1px solid lightgray;
     margin: 5px;
     
+}
+
+.shop-item:hover {
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3 );
+    transition: 0.5s;
 }
 
 .shop-item img {
