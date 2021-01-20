@@ -13,16 +13,48 @@
     
 }
 
+#shop-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: inherit;
+    justify-content: center;
+    
+}
+
+.shop-item {
+    width: 40%;
+    border: 1px solid red;
+    margin: 5px;
+    
+}
+
+.shop-item img {
+    width: 50%;
+}
+
+.shop-item h3, p {
+    padding: 5px;
+}
+
+.shop-item button {
+    margin: 5px;
+}
+
+
+
+/** CSS FOR SHOPPING CART SECTION **/
+
 #cart {
     width: 50%;
     border: 1px solid red;
 }
 
-#shop-items img {
+#cart-items img {
     vertical-align: middle;
 }
 
-#shop-items li {
+#cart-items li {
     font-size: 22px;
     border-bottom: 1px solid black;
     margin-bottom: 5px;
@@ -30,6 +62,8 @@
 
 }
 
-#shop-items button {
+#cart-items button {
     margin-left: 20px;
+
 }
+
