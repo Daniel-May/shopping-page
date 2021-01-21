@@ -3,8 +3,7 @@
 const addToCartButton = document.querySelectorAll(".buy-item");
 const shoppingCart = document.querySelector("#cart-items");
 const cartItem = document.querySelectorAll(".cart-item");
-
-function addCartItem(){
+const newCartItem = function() {
 
     const newItem = document.createElement('li');
     newItem.className = 'cart-item';
@@ -21,8 +20,10 @@ function addCartItem(){
     newItem.appendChild(newItemImage);
     newItem.appendChild(cancelItemImage);
 
-    shoppingCart.appendChild(newItem)
+    shoppingCart.appendChild(newItem);
 
 }
 
-addToCartButton.addEventListener('click', addCartItem());
+
+
+addToCartButton.addEventListener('click', newCartItem());
