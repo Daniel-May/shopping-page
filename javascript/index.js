@@ -19,6 +19,7 @@ function createCartItem() {
     const newItemImage = document.createElement('img');
     newItemImage.src = "images/gift-icon.png";
     newItemImage.alt = "an icon of a blue gift box and ribbon";
+    
 
     const cancelItemImage = document.createElement('img');
     cancelItemImage.className = "remove-button"
