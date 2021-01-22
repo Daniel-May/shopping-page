@@ -5,9 +5,12 @@ const shoppingCart = document.querySelector("#cart-items");
 const cartItem = document.querySelectorAll(".cart-item");
 
 
+for (var i = 0; i < addToCartButton.length; i++) {
+    addToCartButton[i].addEventListener('click', createCartItem)
+}
 
 
-/*function createCartItem() {
+function createCartItem() {
 
     const newItem = document.createElement('li');
     newItem.className = 'cart-item';
@@ -26,7 +29,7 @@ const cartItem = document.querySelectorAll(".cart-item");
 
     shoppingCart.appendChild(newItem);
 
-}*/
+}
 
 
 
