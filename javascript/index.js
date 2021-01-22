@@ -1,13 +1,13 @@
 // JS FILE FOR INDEX.HTML
 
-const addToCartButton = document.getElementsByClassName(".buy-item");
+const addToCartButton = document.querySelectorAll('button.buy-item');
 const shoppingCart = document.querySelector("#cart-items");
 const cartItem = document.querySelectorAll(".cart-item");
 
 
 
 
-function createCartItem() {
+/*function createCartItem() {
 
     const newItem = document.createElement('li');
     newItem.className = 'cart-item';
@@ -26,9 +26,9 @@ function createCartItem() {
 
     shoppingCart.appendChild(newItem);
 
-}
+}*/
 
-document.getElementsByClassName('.buy-item').addEventListener('click', createCartItem);
+
 
 
 
