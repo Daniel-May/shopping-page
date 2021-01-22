@@ -1,8 +1,9 @@
 // JS FILE FOR INDEX.HTML
 
+const shoppingCart = document.querySelector('#cart-items');
+const currentCartItems = document.querySelectorAll('#cart-items li');
 const addToCartButton = document.querySelectorAll('button.buy-item');
-const shoppingCart = document.querySelector("#cart-items");
-const cartItem = document.querySelectorAll(".cart-item");
+const removeFromCartButton = document.querySelectorAll('img.remove-button');
 
 
 for (var i = 0; i < addToCartButton.length; i++) {
@@ -29,6 +30,20 @@ function createCartItem() {
 
     shoppingCart.appendChild(newItem);
 
+}
+
+
+for (var i = 0; i < removeFromCartButton.length; i++) {
+    removeFromCartButton[i].addEventListener('click', removeCartItem)
+}
+
+function removeCartItem() {
+    
+    if (currentCartItems.length >= 1){
+
+    shoppingCart.removeChild(shoppingCart.lastElementChild);
+
+    }
 }
 
 
