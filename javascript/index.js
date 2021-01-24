@@ -50,7 +50,7 @@ function removeCartItem() {
 
 shoppingCart.addEventListener('click', (e) => {
 
-    if (e.target.tagName === 'IMG'){
+    if (e.target.className === 'remove-button'){
         const li = e.target.parentNode;
         const ul = li.parentNode;
         ul.removeChild(li);
