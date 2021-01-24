@@ -45,6 +45,7 @@
 
 .shop-item button {
     margin: 5px;
+    cursor: pointer;
 }
 
 
@@ -123,6 +124,11 @@
     font-size: 22px;
 }
 
+/** REMOVE BUTTON CSS TO CHANGE POINTER ON HOVER **/
+
+.remove-button {
+    cursor: pointer;
+}
 
 
 
