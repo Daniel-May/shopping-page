@@ -34,7 +34,7 @@ function createCartItem() {
 }
 
 
-for (var i = 0; i < removeFromCartButton.length; i++) {
+/*for (var i = 0; i < removeFromCartButton.length; i++) {
     removeFromCartButton[i].addEventListener('click', removeCartItem)
 }
 
@@ -46,6 +46,18 @@ function removeCartItem() {
 
     }
 }
+*/
+
+shoppingCart.addEventListener('click', (e) => {
+
+    if (e.target.tagName === 'IMG'){
+        const li = e.target.parentNode;
+        const ul = li.parentNode;
+        ul.removeChild(li);
+
+    }
+
+});
 
 
 
