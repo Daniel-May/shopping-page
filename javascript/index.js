@@ -7,31 +7,47 @@ const removeFromCartButton = document.querySelectorAll('img.remove-button');
 
 
 for (var i = 0; i < addToCartButton.length; i++) {
-    addToCartButton[i].addEventListener('click', createCartItem)
+    addToCartButton[i].addEventListener('click', createCartItem);
+    
+
+    
 }
 
 
 function createCartItem() {
 
-    const newItem = document.createElement('li');
-    newItem.className = 'cart-item';
+    for (var i = 0; i < addToCartButton.length; i++){
 
-    const newItemImage = document.createElement('img');
-    newItemImage.src = "images/gift-icon.png";
-    newItemImage.alt = "an icon of a blue gift box and ribbon";
+        const value = addToCartButton[i].value;
+        
+   
+    
+    
     
 
-    const cancelItemImage = document.createElement('img');
-    cancelItemImage.className = "remove-button"
-    cancelItemImage.src = "images/cancel-icon.png";
-    cancelItemImage.alt = "red remove icon"
+    //CREATE CART LI ITEM
+    const newItem = document.createElement('li');
+    newItem.className = 'cart-item';
+    newItem.innerHTML = 'Shop Item';
+    newItem.innerHTML = value;
 
-    newItem.appendChild(newItemImage);
+
+    //CREATE CANCEL CART ITEM BUTTON
+    const cancelItemImage = document.createElement('img');
+    cancelItemImage.className = "remove-button";
+    cancelItemImage.src = "images/cancel-icon.png";
+    cancelItemImage.alt = "red remove icon";
+
     newItem.appendChild(cancelItemImage);
+    
+    
 
     shoppingCart.appendChild(newItem);
 
+
+    }
 }
+
 
 
 /*for (var i = 0; i < removeFromCartButton.length; i++) {
@@ -52,8 +68,8 @@ shoppingCart.addEventListener('click', (e) => {
 
     if (e.target.className === 'remove-button'){
         const li = e.target.parentNode;
-        const ul = li.parentNode;
-        ul.removeChild(li);
+        const ol = li.parentNode;
+        ol.removeChild(li);
 
     }
 

@@ -63,7 +63,7 @@
     width: 90%;
     border: 1px solid blue;
     border-radius: 25px;
-    text-align: left;
+    text-align: center;
   
 }
 
@@ -95,10 +95,6 @@
     
 }
 
-#cart-items button {
-    margin-left: 20px;
-
-}
 
 #cart-total-wrapper {
     margin: 0 auto;
@@ -128,6 +124,7 @@
 
 .remove-button {
     cursor: pointer;
+    
 }
 
 
