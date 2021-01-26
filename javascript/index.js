@@ -4,30 +4,21 @@ const shoppingCart = document.querySelector('#cart-items');
 const currentCartItems = document.querySelectorAll('#cart-items li');
 const addToCartButton = document.querySelectorAll('button.buy-item');
 const removeFromCartButton = document.querySelectorAll('img.remove-button');
+const itemDescription = $('.shop-item p').html();
 
+// SHOPPING AREA BUTTON EVENT LISTENER
 
 for (var i = 0; i < addToCartButton.length; i++) {
     addToCartButton[i].addEventListener('click', createCartItem);
-    
-
-    
 }
 
 
 function createCartItem(event) {
 
-   // for (var i = 0; i < addToCartButton.length; i++){
-
-   //     const value = addToCartButton[i].value;
-   //  }
-    
-
     //CREATE CART LI ITEM
     const newItem = document.createElement('li');
     newItem.className = 'cart-item';
     newItem.innerHTML = event.target.value;
-    
-
 
     //CREATE CANCEL CART ITEM BUTTON
     const cancelItemImage = document.createElement('img');
@@ -35,11 +26,13 @@ function createCartItem(event) {
     cancelItemImage.src = "images/cancel-icon.png";
     cancelItemImage.alt = "red remove icon";
 
+    const p = document.createElement('p');
+    p.innerHTML = itemDescription;
+
+
     newItem.appendChild(cancelItemImage);
-
+    newItem.appendChild(p);
     shoppingCart.appendChild(newItem);
-
-
     
 }
 
