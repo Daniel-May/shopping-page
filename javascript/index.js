@@ -14,22 +14,19 @@ for (var i = 0; i < addToCartButton.length; i++) {
 }
 
 
-function createCartItem() {
+function createCartItem(event) {
 
-    for (var i = 0; i < addToCartButton.length; i++){
+   // for (var i = 0; i < addToCartButton.length; i++){
 
-        const value = addToCartButton[i].value;
-        
-   
-    
-    
+   //     const value = addToCartButton[i].value;
+   //  }
     
 
     //CREATE CART LI ITEM
     const newItem = document.createElement('li');
     newItem.className = 'cart-item';
-    newItem.innerHTML = 'Shop Item';
-    newItem.innerHTML = value;
+    newItem.innerHTML = event.target.value;
+    
 
 
     //CREATE CANCEL CART ITEM BUTTON
@@ -39,13 +36,11 @@ function createCartItem() {
     cancelItemImage.alt = "red remove icon";
 
     newItem.appendChild(cancelItemImage);
-    
-    
 
     shoppingCart.appendChild(newItem);
 
 
-    }
+    
 }
 
 
