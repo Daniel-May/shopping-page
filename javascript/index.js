@@ -30,8 +30,9 @@ function createCartItem(event) {
     p.innerHTML = itemDescription;
 
 
-    newItem.appendChild(cancelItemImage);
+   
     newItem.appendChild(p);
+    newItem.appendChild(cancelItemImage);
     shoppingCart.appendChild(newItem);
     
 }

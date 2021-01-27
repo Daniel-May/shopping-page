@@ -67,18 +67,15 @@
   
 }
 
-.cart-items {
-    width: 10%;
-}
-
 
 #cart-items img {
     vertical-align: middle;
-    margin-left: 20px;
+   
 }
 
 #cart-items {
     list-style-type: none;
+
     
 }
 
@@ -87,11 +84,21 @@
     border-bottom: 1px solid lightgray;
     margin-bottom: 5px;
     padding: 5px;
+    margin: 0 auto;
+
 
 }
 
 #cart-items-wrapper #cart-items:last-child li:last-child {
     border-bottom:none;
+    
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    vertical-align: middle;
     
 }
 
