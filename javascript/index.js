@@ -18,21 +18,26 @@ function createCartItem(event) {
     //CREATE CART LI ITEM
     const newItem = document.createElement('li');
     newItem.className = 'cart-item';
-    newItem.innerHTML = event.target.value;
+    //newItem.innerHTML = event.target.value;
+
+    //GET AND SET SHOP/CART ITEM VALUE 
+    const itemValue = document.createElement('p');
+    itemValue.innerHTML = event.target.value;
+
+    //CREATE CART ITEM DESCRIPTION 
+    const p = document.createElement('p');
+    p.innerHTML = itemDescription;
 
     //CREATE CANCEL CART ITEM BUTTON
     const cancelItemImage = document.createElement('img');
     cancelItemImage.className = "remove-button";
     cancelItemImage.src = "images/cancel-icon.png";
     cancelItemImage.alt = "red remove icon";
-
-    const p = document.createElement('p');
-    p.innerHTML = itemDescription;
-
-
    
+    newItem.appendChild(itemValue);
     newItem.appendChild(p);
     newItem.appendChild(cancelItemImage);
+
     shoppingCart.appendChild(newItem);
     
 }
