@@ -1,16 +1,20 @@
 // JS FILE FOR INDEX.HTML
 
 const shoppingCart = document.querySelector('#cart-items');
-const currentCartItems = document.querySelectorAll('#cart-items li');
+const currentCartItems = document.getElementsByClassName('cart-item');
 const addToCartButton = document.querySelectorAll('button.buy-item');
 const removeFromCartButton = document.querySelectorAll('img.remove-button');
 const itemDescription = $('.shop-item p').html();
 const emptyCartMessage = document.createElement('p');
 emptyCartMessage.innerHTML = 'Your cart is empty.';
 
-if (currentCartItems.length === 0) {
-    shoppingCart.appendChild(emptyCartMessage);
-}
+const cartTotal = document.querySelector('#cart-total');
+
+
+
+// EMPTY CART ITEM DISPLAY MESSAGE
+shoppingCart.appendChild(emptyCartMessage);
+    
 
 
 
@@ -49,9 +53,15 @@ function createCartItem(event) {
 
     shoppingCart.appendChild(newItem);
 
-    $(emptyCartMessage).hide();
+    if (currentCartItems.length > 0) {
+        emptyCartMessage.className = 'hide-empty-cart';
+    } else if (currentCartItems.length <= 0) {
+        emptyCartMessage.classList.remove('hide-empty-cart');
+    }
 
+    
 }
+
 
 
 
@@ -64,10 +74,6 @@ shoppingCart.addEventListener('click', (e) => {
         const ol = li.parentNode;
         ol.removeChild(li);
 
-    }
-
-    if (currentCartItems.length === 0) {
-        $(emptyCartMessage).show();
     }
 
 });
