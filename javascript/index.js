@@ -5,11 +5,20 @@ const currentCartItems = document.querySelectorAll('#cart-items li');
 const addToCartButton = document.querySelectorAll('button.buy-item');
 const removeFromCartButton = document.querySelectorAll('img.remove-button');
 const itemDescription = $('.shop-item p').html();
+const emptyCartMessage = document.createElement('p');
+emptyCartMessage.innerHTML = 'Your cart is empty.';
+
+if (currentCartItems.length === 0) {
+    shoppingCart.appendChild(emptyCartMessage);
+}
+
+
 
 // SHOPPING AREA BUTTON EVENT LISTENER
 
 for (var i = 0; i < addToCartButton.length; i++) {
     addToCartButton[i].addEventListener('click', createCartItem);
+    
 }
 
 
@@ -39,24 +48,14 @@ function createCartItem(event) {
     newItem.appendChild(cancelItemImage);
 
     shoppingCart.appendChild(newItem);
-    
+
+    $(emptyCartMessage).hide();
+
 }
 
 
 
-/*for (var i = 0; i < removeFromCartButton.length; i++) {
-    removeFromCartButton[i].addEventListener('click', removeCartItem)
-}
-
-function removeCartItem() {
-    
-    if (currentCartItems.length >= 1){
-
-    shoppingCart.removeChild(shoppingCart.lastElementChild);
-
-    }
-}
-*/
+// REMOVE CART ITEMS BUTTON 
 
 shoppingCart.addEventListener('click', (e) => {
 
@@ -67,14 +66,9 @@ shoppingCart.addEventListener('click', (e) => {
 
     }
 
+    if (currentCartItems.length === 0) {
+        $(emptyCartMessage).show();
+    }
+
 });
 
-
-
-
-
-
-
-    
-
- 
