@@ -3,7 +3,7 @@
 const shoppingCart = document.querySelector('#cart-items');
 const currentCartItems = document.getElementsByClassName('cart-item');
 const addToCartButton = document.querySelectorAll('button.buy-item');
-const removeFromCartButton = document.querySelectorAll('img.remove-button');
+const removeFromCartButton = document.getElementsByClassName('remove-button');
 const itemDescription = $('.shop-item p').html();
 const emptyCartMessage = document.createElement('p');
 emptyCartMessage.innerHTML = 'Your cart is empty.';
@@ -11,12 +11,21 @@ emptyCartMessage.innerHTML = 'Your cart is empty.';
 const cartTotal = document.querySelector('#cart-total');
 
 
-
 // EMPTY CART ITEM DISPLAY MESSAGE
-shoppingCart.appendChild(emptyCartMessage);
+
+for (var i = 0; i < 10; i++){
+if (currentCartItems.length === 0){
+
+    shoppingCart.appendChild(emptyCartMessage);
+
+} else if (currentCartItems.length >= 1) {
+
+    shoppingCart.removeChild(emptyCartMessage);
+}
+}
+
+
     
-
-
 
 // SHOPPING AREA BUTTON EVENT LISTENER
 
@@ -53,14 +62,19 @@ function createCartItem(event) {
 
     shoppingCart.appendChild(newItem);
 
-    if (currentCartItems.length > 0) {
-        emptyCartMessage.className = 'hide-empty-cart';
-    } else if (currentCartItems.length <= 0) {
-        emptyCartMessage.classList.remove('hide-empty-cart');
-    }
-
-    
+    //emptyCart();
 }
+
+//function emptyCart() {
+
+   // if (removeFromCartButton.length === 0) {
+    //    emptyCartMessage.classList.remove('hide-empty-cart');
+
+    //} else {
+    //    emptyCartMessage.className = 'hide-empty-cart';
+    //} 
+        
+//}
 
 
 
@@ -76,5 +90,9 @@ shoppingCart.addEventListener('click', (e) => {
 
     }
 
+
+
 });
+
+
 
