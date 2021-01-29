@@ -13,19 +13,6 @@ const cartTotal = document.querySelector('#cart-total');
 
 // EMPTY CART ITEM DISPLAY MESSAGE
 shoppingCart.appendChild(emptyCartMessage);
-
-//for (var i = 0; i < 10; i++){
-//if (currentCartItems.length === 0){
-
-//    shoppingCart.appendChild(emptyCartMessage);
-
-//} else if (currentCartItems.length >= 1) {
-
-//    shoppingCart.removeChild(emptyCartMessage);
-//}
-//}
-
-
     
 
 // SHOPPING AREA BUTTON EVENT LISTENER
@@ -41,11 +28,11 @@ function createCartItem(event) {
     //CREATE CART LI ITEM
     const newItem = document.createElement('li');
     newItem.className = 'cart-item';
-    //newItem.innerHTML = event.target.value;
 
     //GET AND SET SHOP/CART ITEM VALUE 
     const itemValue = document.createElement('p');
     itemValue.innerHTML = event.target.value;
+    itemValue.className = 'item-price';
 
     //CREATE CART ITEM DESCRIPTION 
     const p = document.createElement('p');
@@ -65,38 +52,11 @@ function createCartItem(event) {
 
     emptyCartMessage.className = 'hide-empty-cart';
     
-
-    //emptyCart();
+    updateTotal();
+ 
 }
 
-//function emptyCart() {
 
-   // if (removeFromCartButton.length === 0) {
-    //    emptyCartMessage.classList.remove('hide-empty-cart');
-
-    //} else {
-    //    emptyCartMessage.className = 'hide-empty-cart';
-    //} 
-        
-//}
-
-
-
-
-// REMOVE CART ITEMS BUTTON 
-
-//shoppingCart.addEventListener('click', (e) => {
-
-//    if (e.target.className === 'remove-button'){
-//        const li = e.target.parentNode;
-//        const ol = li.parentNode;
-//        ol.removeChild(li);
-
-//    }
-
-
-
-//});
 
 // REMOVE CART ITEMS BUTTON
 shoppingCart.addEventListener('click', (e) => {
@@ -107,15 +67,34 @@ shoppingCart.addEventListener('click', (e) => {
         ol.removeChild(li);
     
 
-        // Get cart's current items
+        // GET CARTS CURRENT ITEMS
         const currentCartItems = document.getElementsByClassName('cart-item');
 
-        // If cart items less then or equal to 0 then hide
+        // IF CART ITEMS LESS THAN OR EQUAL TO 0 THEN SHOW EMPTY CART MESSAGE
         if (currentCartItems.length <= 0) {
           emptyCartMessage.classList.remove('hide-empty-cart');
         }
     }
 })
+
+    function updateTotal(){
+
+        // GET SPAN ELEMENT FOR TOTAL
+        let totalValue = document.getElementById(' #cart-total');
+        let currentTotal = 0;
+
+        //GET CURRENT CART ITEMS
+        const currentCartItemsPrices = document.getElementsByClassName('item-price');
+  
+        //LOOP THROUGH CURRENT CART ITEMS
+        for (var i = 0; i < currentCartItemsPrices.length; i++) {
+
+        totalValue.innerHTML = currentTotal += parseInt(currentCartItemsPrices[i].innerHTML);
+        //console.log(totalValue);
+
+    };
+
+    }
 
 
 
