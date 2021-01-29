@@ -8,8 +8,6 @@ const itemDescription = $('.shop-item p').html();
 const emptyCartMessage = document.createElement('p');
 emptyCartMessage.innerHTML = 'Your cart is empty.';
 
-const cartTotal = document.querySelector('#cart-total');
-
 
 // EMPTY CART ITEM DISPLAY MESSAGE
 shoppingCart.appendChild(emptyCartMessage);
@@ -86,16 +84,25 @@ shoppingCart.addEventListener('click', (e) => {
         //GET CURRENT CART ITEMS AND PRICES
         const currentCartItemsPrices = document.getElementsByClassName('item-price');
   
-        //LOOP THROUGH CURRENT CART ITEMS
+        //LOOP THROUGH CURRENT CART ITEMS AND PRICES
         for (var i = 0; i < currentCartItemsPrices.length; i++) {
 
         currentTotal = currentTotal += parseInt(currentCartItemsPrices[i].innerHTML);
-        
-        
 
-    };
+        let totalValue = document.createElement('span');
+        totalValue.innerHTML = currentTotal;
 
-        let totalValue = document.getElementById('#total-value');
+        const cartTotal = document.getElementById('cart-total');
+        cartTotal.appendChild(totalValue);
+
+
+    
+
+
+    }
+
+    
+
          
 
     }
