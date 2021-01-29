@@ -12,17 +12,18 @@ const cartTotal = document.querySelector('#cart-total');
 
 
 // EMPTY CART ITEM DISPLAY MESSAGE
+shoppingCart.appendChild(emptyCartMessage);
 
-for (var i = 0; i < 10; i++){
-if (currentCartItems.length === 0){
+//for (var i = 0; i < 10; i++){
+//if (currentCartItems.length === 0){
 
-    shoppingCart.appendChild(emptyCartMessage);
+//    shoppingCart.appendChild(emptyCartMessage);
 
-} else if (currentCartItems.length >= 1) {
+//} else if (currentCartItems.length >= 1) {
 
-    shoppingCart.removeChild(emptyCartMessage);
-}
-}
+//    shoppingCart.removeChild(emptyCartMessage);
+//}
+//}
 
 
     
@@ -62,6 +63,9 @@ function createCartItem(event) {
 
     shoppingCart.appendChild(newItem);
 
+    emptyCartMessage.className = 'hide-empty-cart';
+    
+
     //emptyCart();
 }
 
@@ -81,18 +85,38 @@ function createCartItem(event) {
 
 // REMOVE CART ITEMS BUTTON 
 
+//shoppingCart.addEventListener('click', (e) => {
+
+//    if (e.target.className === 'remove-button'){
+//        const li = e.target.parentNode;
+//        const ol = li.parentNode;
+//        ol.removeChild(li);
+
+//    }
+
+
+
+//});
+
+// REMOVE CART ITEMS BUTTON
 shoppingCart.addEventListener('click', (e) => {
 
     if (e.target.className === 'remove-button'){
         const li = e.target.parentNode;
         const ol = li.parentNode;
         ol.removeChild(li);
+    
 
+        // Get cart's current items
+        const currentCartItems = document.getElementsByClassName('cart-item');
+
+        // If cart items less then or equal to 0 then hide
+        if (currentCartItems.length <= 0) {
+          emptyCartMessage.classList.remove('hide-empty-cart');
+        }
     }
+})
 
-
-
-});
 
 
 
