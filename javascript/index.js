@@ -80,19 +80,23 @@ shoppingCart.addEventListener('click', (e) => {
     function updateTotal(){
 
         // GET SPAN ELEMENT FOR TOTAL
-        let totalValue = document.getElementById(' #cart-total');
+        
         let currentTotal = 0;
 
-        //GET CURRENT CART ITEMS
+        //GET CURRENT CART ITEMS AND PRICES
         const currentCartItemsPrices = document.getElementsByClassName('item-price');
   
         //LOOP THROUGH CURRENT CART ITEMS
         for (var i = 0; i < currentCartItemsPrices.length; i++) {
 
-        totalValue.innerHTML = currentTotal += parseInt(currentCartItemsPrices[i].innerHTML);
-        //console.log(totalValue);
+        currentTotal = currentTotal += parseInt(currentCartItemsPrices[i].innerHTML);
+        
+        
 
     };
+
+        let totalValue = document.getElementById('#total-value');
+         
 
     }
 
