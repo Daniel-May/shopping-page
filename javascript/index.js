@@ -2,14 +2,19 @@
 
 const shoppingCart = document.querySelector('#cart-items');   
 const currentCartItems = document.getElementsByClassName('cart-item');
+const currentCartItemsPrices = document.getElementsByClassName('item-price');
 const addToCartButton = document.querySelectorAll('button.buy-item');
 const removeFromCartButton = document.getElementsByClassName('remove-button');
 const itemDescription = $('.shop-item p').html();
 const emptyCartMessage = document.createElement('p');
 emptyCartMessage.innerHTML = 'Your cart is empty.';
+
 const cartTotal = document.getElementById('cart-total');
 let totalValue = document.createElement('span');
+totalValue.className = 'running-total';
 cartTotal.appendChild(totalValue);
+
+
 
 // EMPTY CART ITEM DISPLAY MESSAGE
 shoppingCart.appendChild(emptyCartMessage);
@@ -56,6 +61,26 @@ function createCartItem(event) {
  
 }
 
+function updateTotal(){
+
+    // VARIABLE TO HOLD CURRENT TOTAL
+    let currentTotal = 0;
+
+    //GET CURRENT CART ITEMS PRICES
+    const currentCartItemsPrices = document.getElementsByClassName('item-price');
+  
+    //LOOP THROUGH CURRENT CART ITEMS AND PRICES
+    for (var i = 0; i < currentCartItemsPrices.length; i++) {
+
+    //UPDATE CURRENT TOTAL WITH SELECTED ITEM PRICE ON EACH LOOP    
+    currentTotal += parseInt(currentCartItemsPrices[i].textContent);
+
+    totalValue.innerHTML = currentTotal;
+   
+    
+    }
+};
+
 
 
 // REMOVE CART ITEMS BUTTON
@@ -66,7 +91,6 @@ shoppingCart.addEventListener('click', (e) => {
         const ol = li.parentNode;
         ol.removeChild(li);
     
-
         // GET CARTS CURRENT ITEMS
         const currentCartItems = document.getElementsByClassName('cart-item');
 
@@ -74,33 +98,37 @@ shoppingCart.addEventListener('click', (e) => {
         if (currentCartItems.length <= 0) {
           emptyCartMessage.classList.remove('hide-empty-cart');
         }
+
+
     }
-})
+});
 
-    function updateTotal(){
 
-        // VARIABLE TO HOLD CURRENT TOTAL
-        let currentTotal = 0;
 
-        //GET CURRENT CART ITEMS AND PRICES
-        const currentCartItemsPrices = document.getElementsByClassName('item-price');
-  
-        //LOOP THROUGH CURRENT CART ITEMS AND PRICES
-        for (var i = 0; i < currentCartItemsPrices.length; i++) {
 
-        //UPDATE CURRENT TOTAL WITH SELECTED ITEM PRICE ON EACH LOOP    
-        currentTotal = currentTotal += parseInt(currentCartItemsPrices[i].innerHTML);
 
-        totalValue.innerHTML = currentTotal;
+shoppingCart.addEventListener('click', (e) =>{
+
+    //VARIABLE TO HOLD CURRENT TOTAL
+    let runningTotal = document.querySelector('.running-total');
+    runningTotal = runningTotal.innerHTML;
+
+
+    if (e.target.className === 'remove-button') {
     
+    //GET CURRENT CART ITEMS PRICES
+    const currentCartItemsPrices = document.getElementsByClassName('item-price');
+
+    for (var i = 0; i < currentCartItemsPrices.length; i++) {
+        
+        runningTotal -= parseInt(currentCartItemsPrices[i].innerHTML);
+
+        totalValue.innerHTML = runningTotal;
     }
 
-    
-
-         
-
-    }
-
+    console.log(runningTotal);
+}
+});
 
 
 
