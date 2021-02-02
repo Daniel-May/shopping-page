@@ -1,13 +1,15 @@
 // JS FILE FOR INDEX.HTML
 
-const shoppingCart = document.querySelector('#cart-items');
+const shoppingCart = document.querySelector('#cart-items');   
 const currentCartItems = document.getElementsByClassName('cart-item');
 const addToCartButton = document.querySelectorAll('button.buy-item');
 const removeFromCartButton = document.getElementsByClassName('remove-button');
 const itemDescription = $('.shop-item p').html();
 const emptyCartMessage = document.createElement('p');
 emptyCartMessage.innerHTML = 'Your cart is empty.';
-
+const cartTotal = document.getElementById('cart-total');
+let totalValue = document.createElement('span');
+cartTotal.appendChild(totalValue);
 
 // EMPTY CART ITEM DISPLAY MESSAGE
 shoppingCart.appendChild(emptyCartMessage);
@@ -77,8 +79,7 @@ shoppingCart.addEventListener('click', (e) => {
 
     function updateTotal(){
 
-        // GET SPAN ELEMENT FOR TOTAL
-        
+        // VARIABLE TO HOLD CURRENT TOTAL
         let currentTotal = 0;
 
         //GET CURRENT CART ITEMS AND PRICES
@@ -87,18 +88,11 @@ shoppingCart.addEventListener('click', (e) => {
         //LOOP THROUGH CURRENT CART ITEMS AND PRICES
         for (var i = 0; i < currentCartItemsPrices.length; i++) {
 
+        //UPDATE CURRENT TOTAL WITH SELECTED ITEM PRICE ON EACH LOOP    
         currentTotal = currentTotal += parseInt(currentCartItemsPrices[i].innerHTML);
 
-        let totalValue = document.createElement('span');
         totalValue.innerHTML = currentTotal;
-
-        const cartTotal = document.getElementById('cart-total');
-        cartTotal.appendChild(totalValue);
-
-
     
-
-
     }
 
     
