@@ -1,5 +1,9 @@
 /** STYLESHEET FOR INDEX.HTML - SHOPPING PAGE **/
 
+/** GOOGLE FONTS **/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
 #wrapper {
     width: 100%;
     display: flex;
@@ -12,6 +16,11 @@
     border: 1px solid red;
     overflow: auto;
     max-height: 100vh;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
 }
 
 #shop-items {
@@ -39,13 +48,25 @@
     width: 50%;
 }
 
-.shop-item h3, p {
+.shop-item h3 {
     padding: 5px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.shop-item p {
+    padding: 5px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .shop-item button {
     margin: 5px;
     cursor: pointer;
+    background-color: blue;
+    border: 5px solid blue;
+    color: white;
 }
 
 
@@ -60,9 +81,10 @@
 
 #cart-items-wrapper {
     margin: 0 auto;
+    margin-top: 10px;
     width: 90%;
-    border: 1px solid blue;
-    border-radius: 25px;
+    border: 1px solid lightgray;
+    border-radius: 0px;
     text-align: center;
   
 }
@@ -80,11 +102,12 @@
 }
 
 #cart-items li {
-    font-size: 22px;
+    font-size: 18px;
     border-bottom: 1px solid lightgray;
     margin-bottom: 5px;
     padding: 5px;
     margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
 
 
 }
@@ -99,7 +122,14 @@
     flex-direction: row;
     justify-content: center;
     vertical-align: middle;
+
     
+}
+
+.cart-item p {
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 
@@ -108,7 +138,7 @@
     margin-top: 20px;
     width: 90%;
     border: 1px solid green;
-    border-radius: 10px;
+    border-radius: 0px;
     text-align: left;
 
 }
@@ -119,12 +149,25 @@
 
 }
 
+#currency {
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+.running-total {
+    margin-left: -4px;
+    font-size: 22px;
+}
+
 #cart-total {
     list-style-type: none;
+    font-family: 'Poppins', sans-serif;
 }
 
 #cart-total li {
     font-size: 22px;
+    
+   
 }
 
 /** REMOVE BUTTON CSS TO CHANGE POINTER ON HOVER **/
@@ -134,8 +177,15 @@
     
 }
 
+.visible {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 5px;
+}
+
 .hide-empty-cart {
     display: none;
+
 }
 
 
