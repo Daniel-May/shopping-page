@@ -13,7 +13,6 @@
 
 #shop {
     width: 50%;
-    border: 1px solid red;
     overflow: auto;
     max-height: 100vh;
 }
@@ -75,7 +74,6 @@ h1 {
 
 #cart {
     width: 50%;
-    border: 1px solid red;
 
 }
 
@@ -186,6 +184,24 @@ h1 {
 .hide-empty-cart {
     display: none;
 
+}
+
+#cart-buttons {
+    margin-top: 20px;
+}
+
+#checkout {
+    background-color: green;
+    border: 5px solid green;
+    color: white;
+    cursor: pointer;
+}
+
+#clear-cart {
+    background-color: red;
+    border: 5px solid red;
+    color: white;
+    cursor: pointer;
 }
 
 

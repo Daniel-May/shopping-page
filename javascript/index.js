@@ -6,19 +6,26 @@ const currentCartItemsPrices = document.getElementsByClassName('item-price');
 const addToCartButton = document.querySelectorAll('button.buy-item');
 const removeFromCartButton = document.getElementsByClassName('remove-button');
 const itemDescription = $('.shop-item p').html();
+
 const emptyCartMessage = document.createElement('p');
 emptyCartMessage.innerHTML = 'Your cart is empty.';
 emptyCartMessage.className = "visible";
 
 const cartTotal = document.getElementById('cart-total');
+
 let totalValue = document.createElement('span');
 totalValue.className = 'running-total';
 cartTotal.appendChild(totalValue);
+
+const emptyCartButton = document.getElementById('clear-cart');
 
 
 
 // EMPTY CART ITEM DISPLAY MESSAGE
 shoppingCart.appendChild(emptyCartMessage);
+
+// EMPTY CART BUTTON EVENT LISTENER
+emptyCartButton.addEventListener('click', clearCart);
     
 
 // SHOPPING AREA BUTTON EVENT LISTENER
@@ -129,6 +136,23 @@ shoppingCart.addEventListener('click', (e) => {
 
     }
 });
+
+function clearCart(){
+
+    // GET CARTS CURRENT ITEMS
+    const currentList = $('.cart-item');
+    const total = $('.running-total');
+
+    currentList.remove();
+    total.empty();
+
+    const emptyCartMessage = document.createElement('p');
+    emptyCartMessage.innerHTML = 'Your cart is empty.';
+    emptyCartMessage.className = "visible";
+
+    shoppingCart.appendChild(emptyCartMessage)
+    
+}
 
 
 
