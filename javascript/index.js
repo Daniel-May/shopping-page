@@ -20,7 +20,6 @@ cartTotal.appendChild(totalValue);
 const emptyCartButton = document.getElementById('clear-cart');
 
 
-
 // EMPTY CART ITEM DISPLAY MESSAGE
 shoppingCart.appendChild(emptyCartMessage);
 
